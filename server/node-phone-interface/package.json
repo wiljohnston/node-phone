@@ -1,0 +1,62 @@
+{
+  "_from": "git+https://github.com/wiljohnston/node-phone-interface.git",
+  "_id": "node-phone-interface@1.0.0",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/node-phone-interface",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/wiljohnston/node-phone-interface",
+    "rawSpec": "https://github.com/wiljohnston/node-phone-interface",
+    "saveSpec": "git+https://github.com/wiljohnston/node-phone-interface.git",
+    "fetchSpec": "https://github.com/wiljohnston/node-phone-interface.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/wiljohnston/node-phone-interface.git#2c1b08bdd9161c917d595f64414b4c73de3c4d64",
+  "_spec": "https://github.com/wiljohnston/node-phone-interface",
+  "_where": "/Users/williamjohnsto/Documents/javascript-projects/phone/server",
+  "author": {
+    "name": "William Johnston"
+  },
+  "bugs": {
+    "url": "https://github.com/wiljohnston/node-phone-interface/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "node-phone": "git+https://github.com/wiljohnston/node-phone.git"
+  },
+  "deprecated": false,
+  "description": "layer above node-phone, processes AT commands and sends responses",
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "gatsby-plugin-netlify-functions": "^0.0.3",
+    "gatsby-plugin-root-import": "^2.0.5",
+    "postcss-import": "^12.0.1",
+    "prettier": "^1.17.0"
+  },
+  "homepage": "https://github.com/wiljohnston/node-phone-interface#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "name": "node-phone-interface",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wiljohnston/node-phone-interface.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}

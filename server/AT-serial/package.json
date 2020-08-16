@@ -1,0 +1,58 @@
+{
+  "_from": "git+https://github.com/wiljohnston/node-phone.git",
+  "_id": "node-phone@1.0.0",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/node-phone",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "node-phone@git+https://github.com/wiljohnston/node-phone.git",
+    "name": "node-phone",
+    "escapedName": "node-phone",
+    "rawSpec": "git+https://github.com/wiljohnston/node-phone.git",
+    "saveSpec": "git+https://github.com/wiljohnston/node-phone.git",
+    "fetchSpec": "https://github.com/wiljohnston/node-phone.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "/node-phone-interface"
+  ],
+  "_resolved": "git+https://github.com/wiljohnston/node-phone.git#ea8791c8e09c43747d0b8f3481d786ec4e72cb70",
+  "_spec": "node-phone@git+https://github.com/wiljohnston/node-phone.git",
+  "_where": "/Users/williamjohnsto/Documents/javascript-projects/phone/server/node_modules/node-phone-interface",
+  "author": {
+    "name": "William Johnston"
+  },
+  "bugs": {
+    "url": "https://github.com/wiljohnston/node-phone/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Python serial port AT / node js interface for building a UI for a SIM module",
+  "devDependencies": {
+    "prettier": "2.0.5"
+  },
+  "homepage": "https://github.com/wiljohnston/node-phone#readme",
+  "keywords": [
+    "GSM module",
+    "4g module",
+    "3g module",
+    "AT commands",
+    "Serial port interface",
+    "SIM interface",
+    "Python"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "node-phone",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wiljohnston/node-phone.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}

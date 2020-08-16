@@ -1,0 +1,40 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "parser": "babel-eslint",
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": ["prettier"],
+  "rules": {
+    "comma-dangle": ["error", "never"],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "jsx-a11y/media-has-caption": 0,
+    "react/destructuring-assignment": [true, { "extensions": [".jsx"] }],
+    "prettier/prettier": ["error"],
+    "no-param-reassign": 0,
+    "quotes": [2, "backtick"],
+    "radix": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "semi": [2, "always"]
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": [
+        ["~assets", "./src/assets"],
+        ["~components", "./src/components"],
+        ["~context", "./src/context"],
+        ["~node_modules", "./node_modules"],
+        ["~scss", "./src/scss"],
+        ["~utils", "./src/utils"]
+      ]
+    }
+  }
+}
