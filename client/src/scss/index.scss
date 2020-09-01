@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "transitions.scss";
+@import "screen.scss";
+@import "grid.scss";
+@import "fonts.scss";
+
+@import "base.scss";
+@import "common.scss";
+
+@import "components/Button.scss";
+@import "components/Footer.scss";
+@import "components/Header.scss";
+@import "components/Layout.scss";
+@import "components/Nav.scss";

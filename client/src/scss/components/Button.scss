@@ -1,0 +1,45 @@
+.button {
+  max-width: 480px;
+
+  &--black {
+    border: 1px solid theme("colors.black");
+    background-color: theme("colors.black");
+    color: theme("colors.white");
+
+    @include hoverable {
+      background-color: theme("colors.white");
+      color: theme("colors.black");
+    }
+
+    &.button--transparent {
+      background: transparent;
+      color: theme("colors.black");
+
+      @include hoverable {
+        background-color: theme("colors.black");
+        color: theme("colors.white");
+      }
+    }
+  }
+
+  &--white {
+    border: 1px solid theme("colors.white");
+    background-color: theme("colors.white");
+    color: theme("colors.black");
+
+    @include hoverable {
+      background-color: theme("colors.black");
+      color: theme("colors.white");
+    }
+
+    &.button--transparent {
+      background: transparent;
+      color: theme("colors.white");
+
+      @include hoverable {
+        background-color: theme("colors.white");
+        color: theme("colors.black");
+      }
+    }
+  }
+}

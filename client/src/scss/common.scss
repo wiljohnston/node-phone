@@ -1,0 +1,84 @@
+.test {
+  border: 3px solid red;
+}
+
+.h-1\/2 {
+  height: 50%;
+}
+
+.transform-center {
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.transform-center-invert-x {
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0) scaleX(-1);
+}
+
+.invert-x {
+  transform: scaleX(-1);
+}
+
+.sixteen-by-nine {
+  height: 56.25vw;
+}
+
+.unbound {
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.gpu {
+  backface-visibility: hidden;
+  perspective: 1000;
+  transform-style: preserve-3d;
+}
+
+.clipped {
+  clip: rect(auto, auto, auto, auto);
+}
+
+.square {
+  width: 100%;
+  position: relative;
+  padding-bottom: 100%;
+}
+
+.border {
+  &-black {
+    border: 1px solid theme("colors.black");
+  }
+
+  &-white {
+    border: 1px solid theme("colors.white");
+  }
+}
+
+.border-b {
+  &-black {
+    border-bottom: 1px solid theme("colors.black");
+  }
+
+  &-white {
+    border-bottom: 1px solid theme("colors.white");
+  }
+}
+
+.border-t {
+  &-black {
+    border-top: 1px solid theme("colors.black");
+  }
+
+  &-white {
+    border-top: 1px solid theme("colors.white");
+  }
+}
+
+.hover-underline {
+  @include hoverable {
+    text-decoration: underline;
+  }
+}

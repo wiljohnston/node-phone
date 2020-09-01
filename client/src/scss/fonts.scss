@@ -1,0 +1,208 @@
+/*
+100: Thin, Hairline, Ultra-light, Extra-light
+200: Light
+300: Book
+400: Regular, Normal, Plain, Roman, Standard
+500: Medium
+600: Semi-bold, Demi-bold
+700: Bold
+800: Heavy, Black, Extra-bold
+900: Ultra-black, Extra-black, Ultra-bold, Heavy-black, Fat, Poster
+*/
+
+// serif:
+// font-family: "Font Name", Times, "Times New Roman", serif;
+
+// sans-serif:
+// font-family: "Font Name", Helvetica, Arial, sans-serif;
+
+/*
+
+
+.font-family {
+  // Sans:
+  font-family: "Font Family", Helvetica, Arial, sans-serif;
+
+  // Serif:
+  font-family: "Font Family", Times, "Times New Roman", serif;
+}
+*/
+
+//
+
+@font-face {
+  font-family: "Mondwest";
+  src: url("../assets/fonts/Mondwest-Regular.otf") format("opentype");
+  font-display: block;
+  font-weight: normal;
+  font-style: normal;
+}
+
+em,
+.em {
+  font-style: italic;
+}
+
+strong,
+.strong {
+  font-weight: bold;
+}
+
+//
+
+@mixin f1 {
+  @include sm {
+    font-size: 64px;
+    line-height: 70px;
+  }
+
+  font-family: "Mondwest", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+
+  font-size: 90px;
+  line-height: 100px;
+  letter-spacing: -0.02em;
+}
+
+.f1 {
+  @include f1;
+}
+
+//
+
+@mixin f2 {
+  @include sm {
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  font-family: "Mondwest", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+
+  font-size: 70px;
+  line-height: 72px;
+  letter-spacing: -0.02em;
+}
+
+.f2 {
+  @include f2;
+}
+
+//
+
+@mixin f3 {
+  @include sm {
+    font-size: 32px;
+    line-height: 34px;
+  }
+
+  font-family: "Mondwest", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+
+  font-size: 44px;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+}
+
+.f3 {
+  @include f3;
+}
+
+//
+
+@mixin f4 {
+  font-family: "Mondwest", Helvetica, Arial, sans-serif;
+  font-size: 34px;
+  line-height: 40px;
+  letter-spacing: -0.015em;
+}
+
+.f4 {
+  @include f4;
+}
+
+//
+
+@mixin f5 {
+  @include sm {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  font-family: "Mondwest", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.01em;
+}
+
+.f5 {
+  @include f5;
+}
+
+//
+
+@mixin b1 {
+  font-family: "Mondwest", Helvetica, Arial, sans-serif;
+
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.b1 {
+  @include b1;
+}
+
+//
+
+@mixin b2 {
+  font-family: "Mondwest", Helvetica, Arial, sans-serif;
+
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.b2 {
+  @include b2;
+}
+
+//
+
+@mixin b3 {
+  font-family: "Mondwest", Times, "Times New Roman", serif;
+
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.b3 {
+  @include b3;
+}
+
+//
+
+@mixin caption {
+  font-family: "Mondwest", Helvetica, Arial, sans-serif;
+
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.15em;
+}
+
+.caption {
+  @include caption;
+}
+
+//
+
+@mixin icon-caption {
+  font-family: "Mondwest", Helvetica, Arial, sans-serif;
+
+  font-size: 6px;
+  line-height: 8px;
+}
+
+.icon-caption {
+  @include icon-caption;
+}
