@@ -21,6 +21,8 @@ body {
 
 * {
   box-sizing: border-box;
+  max-width: none !important;
+  max-height: none !important;
 }
 
 a,
@@ -43,7 +45,7 @@ button {
 button:focus,
 input:focus,
 textarea:focus {
-  outline: none;
+  outline: none !important;
 }
 
 input {

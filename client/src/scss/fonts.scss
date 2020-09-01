@@ -50,6 +50,24 @@ strong,
 
 //
 
+@mixin v1 {
+  @include sm {
+    font-size: 25vw;
+  }
+
+  font-family: "Mondwest", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+
+  font-size: 20vw;
+  letter-spacing: -0.02em;
+}
+
+.v1 {
+  @include v1;
+}
+
+//
+
 @mixin f1 {
   @include sm {
     font-size: 64px;

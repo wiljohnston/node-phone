@@ -2,19 +2,16 @@ import React from "react";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 
-const Button = ({ className, color, onClick, text, transparent }) => (
+const Button = ({ className, color, onClick, text, transparent, fontClass }) => (
   <motion.div
     className={`${className}`}
-    whileHover={{
-      scale: 1.025
-    }}
     whileTap={{ scale: 0.975 }}
   >
     <button
       type="button"
       className={`button button--${color} ${
         transparent ? `button--transparent` : ``
-      } ${className} relative py-4 caption uppercase`}
+      } ${className} relative py-4 ${fontClass}`}
       onClick={onClick}
     >
       {text}
@@ -27,7 +24,8 @@ Button.defaultProps = {
   className: ``,
   onClick: () => {},
   text: `Button`,
-  transparent: false
+  transparent: false,
+  fontClass: `button`
 };
 
 Button.propTypes = {
@@ -35,6 +33,7 @@ Button.propTypes = {
   className: PropTypes.string,
   onClick: PropTypes.func,
   text: PropTypes.string,
+  fontClass: PropTypes.string,
   transparent: PropTypes.bool
 };
 
