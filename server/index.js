@@ -22,12 +22,19 @@ const serialOptions = {
   devMode: process.env.DEV_MODE === `1`
 };
 
+const clients = []; // for react devmode reconnections
+let serialInterface;
+
 socketServer.on(`request`, request => {
   const client = request.accept(null, request.origin);
+  clients.push(client);
 
-  const serialInterface = new SerialInterface(at => {
-    client.sendUTF(JSON.stringify({ at }));
-  }, serialOptions);
+  if (clients.length === 1) {
+    // only on first connection do we need to declare this
+    serialInterface = new SerialInterface(at => {
+      clients.forEach(thisClient => thisClient.sendUTF(JSON.stringify({ at })));
+    }, serialOptions);
+  }
 
   client.on(`message`, ({ utf8Data: at }) => {
     serialInterface.sendAT(at);

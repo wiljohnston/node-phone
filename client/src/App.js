@@ -1,61 +1,88 @@
-import React, { useEffect, useState } from "react";
-import Button from "./components/Button"
-import { w3cwebsocket as W3CWebSocket } from "websocket";
-
-const server = new W3CWebSocket(`ws://127.0.0.1:8000`);
+import React, { useContext } from "react";
+import Button from "./components/Button";
+import IncomingCallScreen from "./components/IncomingCallScreen";
+import ActiveCallScreen from "./components/ActiveCallScreen";
+import Cross from "./components/svg/Cross";
+import { AppContext } from "./context/AppContext";
+import getRandomNumber from "./utils/getRandomNumber";
 
 const App = () => {
-  const [currentEvent, setCurrentEvent] = useState({});
-
-  // if we just keep changing what the controller keys are, we can change what we are listening for. 
-  // Eg after RING, add a key to listen for the phone number. Then we can clear it after we hang up.
-  const controller = {
-    "RING": at => {
-      setCurrentEvent({ key: "CALL_INCOMING", at })
-    },
-    "+CLIP:": at => {
-      setCurrentEvent(currentEvent => ({ ...currentEvent, callerId: at.split(` `)[1] }))
-    },
-  }
+  const { currentEvent, dial, setDial, makeCall } = useContext(AppContext);
 
   const eventJSX = {
-    "CALL_INCOMING": (<div className="grid-end-12 flex justify-center">
-    <h2 className="v1">Incoming call, from..</h2>
-    <h2 className="f1">{currentEvent.callerId || `???`}</h2>
-  </div>)
-  }
-
-  const handleMessage = at => {
-    console.log(`Received message '${at}' from server`);
-    
-    at.split(" ").forEach(word => {
-      if(controller[word]){
-        controller[word](at);
-      }
-    });
+    CALL_INCOMING: (
+      <IncomingCallScreen className="grid-end-12 flex flex-col justify-around" />
+    ),
+    CALL_ACTIVE: (
+      <ActiveCallScreen className="grid-end-12 flex flex-col justify-around" />
+    ),
   };
 
-  useEffect(() => {
-    server.onopen = () => {
-      server.onmessage = message => {
-        console.log("raw message received: " + message?.data)
-        if(message?.data){
-          handleMessage(JSON.parse(message.data).at);
-        }
-      }
-    };
-    return () => console.log('unmounting')
-  }, [handleMessage]);
-
-
-  console.log("currentevent",currentEvent)
-
   return (
-    <div className="w-screen h-screen bg-black text-white overflow-hidden">
+    <div className="w-screen h-screen bg-black text-white overflow-hidden noselect">
       <section className="grid">
-        {eventJSX[currentEvent.key] || (<div className="grid-end-12 flex justify-center">
-          <Button fontClass="v1" text="Phone" />
-        </div>)}
+        {eventJSX[currentEvent?.key] || (
+          <>
+            <div className="grid-end-12 flex justify-center">
+              <Button fontClass="v1" text="Phone" />
+            </div>
+
+            <ul className="grid-end-4 grid-start-5 flex flex-wrap justify-center">
+              {new Array(9).fill(null).map((_, number) => (
+                <li
+                  className="w-1/3 flex items-center justify-center f3"
+                  key={`number_${number + 1}`}
+                >
+                  <Button
+                    className="w-full h-full f2"
+                    text={`${number + 1}`}
+                    onClick={() => {
+                      setDial((oldNumber) => `${oldNumber}${number + 1}`);
+                    }}
+                  />
+                </li>
+              ))}
+
+              <li className="w-1/3 flex items-center justify-center f3">
+                <Button
+                  className="w-full h-full f4"
+                  onClick={() => {
+                    setDial(getRandomNumber());
+                  }}
+                >
+                  ?
+                </Button>
+              </li>
+
+              <li className="w-1/3 flex items-center justify-center f3">
+                <Button
+                  className="w-full h-full f2"
+                  text={`0`}
+                  onClick={() => {
+                    setDial((oldNumber) => `${oldNumber}${0}`);
+                  }}
+                />
+              </li>
+
+              <li className="w-1/3 flex items-center justify-center f3">
+                <Button
+                  className="w-full h-full px-6 f2"
+                  onClick={() => {
+                    setDial((oldNumber) => oldNumber.slice(0, -1));
+                  }}
+                >
+                  <Cross className="w-full" color="white" />
+                </Button>
+              </li>
+            </ul>
+
+            <div className="h-full grid-end-3 flex flex-col justify-end">
+              <p className="mb-10 f5">{dial}</p>
+
+              <Button onClick={makeCall} className="f3" text="dial it!" />
+            </div>
+          </>
+        )}
       </section>
     </div>
   );

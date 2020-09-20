@@ -53,12 +53,14 @@ strong,
 @mixin v1 {
   @include sm {
     font-size: 25vw;
+    line-height: 25vw;
   }
 
   font-family: "Mondwest", Helvetica, Arial, sans-serif;
   font-weight: 500;
 
   font-size: 20vw;
+  line-height: 20vw;
   letter-spacing: -0.02em;
 }
 
