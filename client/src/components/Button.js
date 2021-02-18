@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 const Button = ({
   className,
+  containerClassName,
   color,
   onClick,
   text,
@@ -11,7 +12,10 @@ const Button = ({
   fontClass,
   children,
 }) => (
-  <motion.div className={`${className} w-content`} whileTap={{ scale: 0.975 }}>
+  <motion.div
+    className={`${containerClassName} w-content`}
+    whileTap={{ scale: 0.975 }}
+  >
     <button
       type="button"
       className={`button button--${color} ${
