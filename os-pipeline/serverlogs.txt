@@ -1,0 +1,2 @@
+Socket server listening on port 8000
+./3-run-server.sh: line 1:   426 Killed                  sudo /home/pi/.config/nvm/versions/node/v12.6.0/bin/node ../server
