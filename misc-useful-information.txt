@@ -18,3 +18,10 @@ su pi -c './4-run-client.sh &'
 Then we need to follow these instructions to set up the GUI on startup
 https://learn.sparkfun.com/tutorials/how-to-run-a-raspberry-pi-program-on-startup#method-2-autostart
 ..where our last line is: Exec=chromium-browser --kiosk http://localhost:3000
+
+
+Removing the cursor is also a thing that makes the app look better. 
+So to do that, just add the line
+xserver-command = X -nocursor
+to the file
+/etc/lightdm/lightdm.conf
