@@ -3,8 +3,8 @@ import time
 import RPi.GPIO as GPIO
 import serial
 
-serial_port = sys.argv[2]
-baud_rate = sys.argv[3]
+serial_port = sys.argv[1]
+baud_rate = sys.argv[2]
 
 phone = serial.Serial(serial_port, baud_rate)
 phone.flushInput()
