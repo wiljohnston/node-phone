@@ -1,1 +1,1 @@
-node ../server
+sudo /home/pi/.config/nvm/versions/node/v12.6.0/bin/node ../server
