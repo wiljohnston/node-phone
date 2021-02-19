@@ -19,6 +19,7 @@ module.exports = class SerialInterface {
 
     this.onOut = onOut;
 
+    console.log(`Running initial startup`);
     this.startup();
   }
 
