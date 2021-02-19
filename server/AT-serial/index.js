@@ -10,7 +10,7 @@ const rl = readline.createInterface({
 module.exports = class SerialInterface {
   constructor(onOut, options) {
     this.options = {
-      pythonCommand: `sudo python`,
+      pythonCommand: `python`,
       serialPort: `/dev/ttyAMA0`,
       baudRate: 115200,
       devMode: false,

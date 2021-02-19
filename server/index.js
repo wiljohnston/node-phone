@@ -16,7 +16,7 @@ const socketServer = new WebSocketServer({
 });
 
 const serialOptions = {
-  pythonCommand: `sudo python`,
+  pythonCommand: `python`,
   serialPort: `/dev/ttyAMA0`,
   baudRate: 115200,
   devMode: process.env.DEV_MODE === `1`
