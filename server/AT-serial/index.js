@@ -19,6 +19,12 @@ module.exports = class SerialInterface {
 
     this.onOut = onOut;
 
+    this.startup();
+  }
+
+  //
+
+  startup = () => {
     if (this.options.devMode) {
       this.runDevModeLoop();
     } else {
@@ -31,10 +37,15 @@ module.exports = class SerialInterface {
       });
 
       this.listenProcess.stderr.on(`data`, error => {
-        throw new Error(`Serial interface python listen error: ${error}`);
+        if (this.options.devMode) {
+          throw new Error(`Serial interface python listen error: ${error}`);
+        }
+        console.log(`Serial interface python listen error: ${error}`);
+        console.log(`Restarting listen process`);
+        this.startup();
       });
     }
-  }
+  };
 
   //
 
