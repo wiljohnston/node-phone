@@ -1,11 +1,20 @@
-set up ppp network access: https://www.robertlucian.com/2018/08/29/mobile-network-access-rpi/
+Set up ppp network access: https://www.robertlucian.com/2018/08/29/mobile-network-access-rpi/
 
 I think optus APN is yesoptus or something
 
-and to disable pesky wwan0 network device interface from disabling your pppd connection: 
+And to disable pesky wwan0 network device interface from disabling your pppd connection: 
 https://superuser.com/questions/1569810/how-to-disable-wwan0-and-prevent-it-from-starting-up-again
 
-to run network and AT commands at once, connect via raspberry pi universal connector as well as a USB line, and talk to two different ports at once
+To run network and AT commands at once, connect via raspberry pi universal connector as well as a USB line, and talk to two different ports at once
 
+To exit fullscreen chromium, plug in a keyboard and press alt-f4
 
-to exit fullscreen chromium, plug in a keyboard and press alt-f4
+We need our server to start on startup, so add the following lines to /etc/rc.local
+# (assuming the repository is on the desktop, and the user is named 'pi')
+cd /home/pi/Desktop/node-phone/os-pipeline
+su pi -c './3-run-server.sh &'
+su pi -c './4-run-client.sh &'
+
+Then we need to follow these instructions to set up the GUI on startup
+https://learn.sparkfun.com/tutorials/how-to-run-a-raspberry-pi-program-on-startup#method-2-autostart
+..where our last line is: Exec=chromium-browser --kiosk http://localhost:3000

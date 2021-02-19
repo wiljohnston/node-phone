@@ -1,1 +1,1 @@
-firefox -kiosk http://localhost:3000 
+chromium-browser --kiosk http://localhost:3000
