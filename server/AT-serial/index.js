@@ -26,6 +26,7 @@ module.exports = class SerialInterface {
 
       this.listenProcess.stdout.on(`data`, message => {
         message = message.toString();
+        console.log(`Message received:`, message);
         this.onOut(message);
       });
 
@@ -53,6 +54,8 @@ module.exports = class SerialInterface {
       // eslint-disable-next-line no-console
       return console.log(`DEVMODE COMMAND RECEIVED: "${command}"`);
     }
+
+    console.log(`Sending AT command:`, command);
 
     return spawn(this.options.pythonCommand, [
       `-u`,
